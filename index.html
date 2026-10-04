@@ -3,209 +3,572 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
-      content="Nova Studio helps businesses grow with modern branding, web design, and digital strategy."
+      content="Nova Studio creates premium digital experiences, brands, and growth systems for ambitious businesses."
     />
-    <title>Nova Studio | Digital Growth Agency</title>
+
+    <meta name="theme-color" content="#08090d" />
+
+    <title>Nova Studio — Digital Experiences That Move Brands Forward</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <header class="site-header">
+    <!-- Background effects -->
+    <div class="background-glow background-glow-one"></div>
+    <div class="background-glow background-glow-two"></div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="site-header" id="siteHeader">
       <div class="container nav-wrap">
         <a href="#home" class="brand" aria-label="Nova Studio home">
-          <span class="brand-mark">N</span>
-          <span>Nova Studio</span>
+          <span class="brand-mark">
+            <span>N</span>
+          </span>
+
+          <span class="brand-name">Nova<span>Studio</span></span>
         </a>
 
-        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-          
-        </button>
-          <span></span>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
           <span></span>
           <span></span>
         </button>
 
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#about">About</a>
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+          <a href="#work">Work</a>
           <a href="#services">Services</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
-          <a href="#contact" class="nav-cta">Book a Call</a>
+
+          <a href="#contact" class="nav-cta">
+            Start a project
+            <span>↗</span>
+          </a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section id="home" class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Digital growth, built for modern brands</p>
-            <h1>We turn bold ideas into measurable results.</h1>
-            <p class="hero-text">
-              Nova Studio helps businesses grow with strategy, design, and digital experiences
-              that feel premium and perform beautifully.
-            </p>
-            <div class="hero-actions">
-              <a href="#contact" class="btn btn-primary">Start Your Project</a>
-              <a href="#services" class="btn btn-secondary">Our Services</a>
+      <!-- ==================== HERO ==================== -->
+      <section class="hero" id="home">
+        <div class="container hero-container">
+          <div class="hero-content reveal">
+            <div class="hero-kicker">
+              <span class="status-dot"></span>
+              Independent digital studio
             </div>
-            <ul class="hero-stats" aria-label="Company highlights">
-              <li><strong>120+</strong><span>brands launched</span></li>
-              <li><strong>8 yrs</strong><span>experience</span></li>
-              <li><strong>94%</strong><span>client retention</span></li>
-            </ul>
+
+            <h1>
+              We build digital
+              <span class="gradient-text">experiences</span>
+              that move brands forward.
+            </h1>
+
+            <p class="hero-description">
+              Nova Studio combines strategy, design, and technology to create
+              digital experiences that look exceptional and perform with purpose.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#work" class="button button-primary">
+                Explore our work
+                <span>↗</span>
+              </a>
+
+              <a href="#contact" class="button button-ghost">
+                Start a conversation
+              </a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="meta-item">
+                <strong>120+</strong>
+                <span>Projects delivered</span>
+              </div>
+
+              <div class="meta-divider"></div>
+
+              <div class="meta-item">
+                <strong>8+</strong>
+                <span>Years of experience</span>
+              </div>
+
+              <div class="meta-divider"></div>
+
+              <div class="meta-item">
+                <strong>94%</strong>
+                <span>Client retention</span>
+              </div>
+            </div>
           </div>
 
-          <div class="hero-visual" aria-label="Business growth illustration">
-            <div class="card-panel stats-card top-card">
-              <span>Growth</span>
-              <strong>+184%</strong>
+          <!-- Hero visual -->
+          <div class="hero-visual reveal reveal-delay">
+            <div class="visual-orbit orbit-one"></div>
+            <div class="visual-orbit orbit-two"></div>
+
+            <div class="hero-glow"></div>
+
+            <div class="hero-center">
+              <span class="center-small">NOVA</span>
+              <span class="center-large">N</span>
+              <span class="center-small">STUDIO</span>
             </div>
-            <div class="card-panel dashboard-card">
-              <div class="chart-bars" aria-hidden="true">
-                <span style="height: 25%"></span>
-                <span style="height: 48%"></span>
-                <span style="height: 70%"></span>
-                <span style="height: 52%"></span>
-                <span style="height: 88%"></span>
+
+            <div class="floating-card growth-card">
+              <div class="card-top">
+                <span>Growth</span>
+                <span class="card-icon">↗</span>
+              </div>
+
+              <strong>+184%</strong>
+
+              <div class="mini-chart">
+                <span style="height: 30%"></span>
+                <span style="height: 45%"></span>
+                <span style="height: 38%"></span>
+                <span style="height: 62%"></span>
+                <span style="height: 72%"></span>
                 <span style="height: 100%"></span>
               </div>
-              <div class="chart-labels">
-                <span>Jan</span>
-                <span>Mar</span>
-                <span>Jun</span>
-                <span>Aug</span>
-                <span>Sep</span>
-                <span>Dec</span>
+            </div>
+
+            <div class="floating-card project-card">
+              <div class="project-card-image">
+                <span>01</span>
+              </div>
+
+              <div class="project-card-info">
+                <span>Featured project</span>
+                <strong>Digital Identity</strong>
               </div>
             </div>
-            <div class="card-panel badge-card">
-              <span class="dot"></span>
+
+            <div class="floating-card signal-card">
+              <span class="signal-icon">✦</span>
+
               <div>
-                <strong>Business Health</strong>
-                <small>On track</small>
+                <strong>Brand health</strong>
+                <span>Excellent</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="about" class="about section">
-        <div class="container about-grid">
-          <div class="about-content">
-            <p class="section-tag">About us</p>
-            <h2>Creative strategy backed by real business thinking.</h2>
-            <p>
-              We partner with founders and growing teams to sharpen their message, improve their
-              digital presence, and turn attention into action.
-            </p>
-            <p>
-              From brand identity to website design and performance marketing, we create systems
-              that help businesses stand out and scale with confidence.
-            </p>
-          </div>
-          <div class="about-panel">
-            <div>
-              <strong>Brand-first</strong>
-              <p>Clear positioning and memorable experiences for every customer touchpoint.</p>
-            </div>
-            <div>
-              <strong>Data-informed</strong>
-              <p>Every decision is shaped by measurable insights and practical market feedback.</p>
-            </div>
-            <div>
-              <strong>Built to convert</strong>
-              <p>We design for clarity, trust, and action so your audience knows what to do next.</p>
-            </div>
-          </div>
+        <div class="scroll-indicator">
+          <span>Scroll to explore</span>
+          <div class="scroll-line"></div>
         </div>
       </section>
 
-      <section id="services" class="services section">
+      <!-- ==================== TRUST STRIP ==================== -->
+      <section class="trust-section">
         <div class="container">
-          <div class="section-heading">
-            <p class="section-tag">What we do</p>
-            <h2>Solutions designed to move your business forward.</h2>
+          <p class="trust-label">Built for ambitious businesses</p>
+
+          <div class="trust-grid">
+            <span>STARTUPS</span>
+            <span>CREATIVE</span>
+            <span>TECH</span>
+            <span>COMMERCE</span>
+            <span>FINANCE</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== WORK ==================== -->
+      <section class="section work-section" id="work">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="section-number">01</span>
+              <span class="section-label">Selected work</span>
+            </div>
+
+            <h2>
+              Ideas are easy.
+              <span>Execution is everything.</span>
+            </h2>
+
+            <p>
+              We turn strategy into digital experiences designed to make
+              businesses clearer, stronger, and more memorable.
+            </p>
           </div>
 
-          <div class="card-grid">
-            <article class="service-card">
-              <div class="icon-wrap">✦</div>
-              <h3>Brand Strategy</h3>
-              <p>Positioning, messaging, and creative direction that clarifies your value.</p>
+          <div class="work-grid">
+            <article class="work-card work-large reveal">
+              <div class="work-visual work-visual-one">
+                <div class="work-window">
+                  <div class="window-bar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="window-content">
+                    <small>01 / DIGITAL BRAND</small>
+                    <strong>Build something<br />people remember.</strong>
+
+                    <div class="window-line"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="work-info">
+                <div>
+                  <span>Brand Strategy · Web Design</span>
+                  <h3>Northstar</h3>
+                </div>
+
+                <span class="work-arrow">↗</span>
+              </div>
             </article>
 
-            <article class="service-card">
-              <div class="icon-wrap">◇</div>
-              <h3>Web Design</h3>
-              <p>Modern, responsive websites that look strong and convert visitors into leads.</p>
+            <article class="work-card reveal reveal-delay">
+              <div class="work-visual work-visual-two">
+                <div class="abstract-shape shape-one"></div>
+                <div class="abstract-shape shape-two"></div>
+                <div class="abstract-shape shape-three"></div>
+              </div>
+
+              <div class="work-info">
+                <div>
+                  <span>Digital Experience</span>
+                  <h3>Vertex</h3>
+                </div>
+
+                <span class="work-arrow">↗</span>
+              </div>
             </article>
 
-            <article class="service-card">
-              <div class="icon-wrap">▣</div>
-              <h3>SEO Growth</h3>
-              <p>Search visibility strategies that help your audience find you at the right time.</p>
-            </article>
+            <article class="work-card reveal">
+              <div class="work-visual work-visual-three">
+                <div class="data-display">
+                  <span>GROWTH</span>
+                  <strong>+72.4%</strong>
 
-            <article class="service-card">
-              <div class="icon-wrap">◎</div>
-              <h3>Ongoing Support</h3>
-              <p>Flexible partnership for updates, optimization, and continuous digital improvement.</p>
+                  <div class="data-line">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="work-info">
+                <div>
+                  <span>Strategy · Growth</span>
+                  <h3>Atlas</h3>
+                </div>
+
+                <span class="work-arrow">↗</span>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="contact section">
-        <div class="container contact-grid">
-          <div class="contact-copy">
-            <p class="section-tag">Let’s talk</p>
-            <h2>Ready to build something meaningful?</h2>
-            <p>
-              Whether you need a polished website or a smarter brand strategy, we’re ready to help
-              you reach the next stage.
-            </p>
-            <ul class="contact-list">
-              <li>Email: hello@novastudio.com</li>
-              <li>Based in Banglore,India</li>
-            </ul>
+      <!-- ==================== SERVICES ==================== -->
+      <section class="section services-section" id="services">
+        <div class="container">
+          <div class="services-layout">
+            <div class="section-heading services-heading reveal">
+              <div>
+                <span class="section-number">02</span>
+                <span class="section-label">What we do</span>
+              </div>
+
+              <h2>
+                Everything your brand needs to
+                <span>move forward.</span>
+              </h2>
+
+              <p>
+                From the first idea to the final pixel, we bring strategy,
+                creativity, and technology together.
+              </p>
+            </div>
+
+            <div class="services-list">
+              <article class="service-row reveal">
+                <div class="service-number">01</div>
+
+                <div class="service-main">
+                  <h3>Brand Strategy</h3>
+                  <p>
+                    Positioning, messaging, identity, and creative direction
+                    that give your business a clear voice.
+                  </p>
+                </div>
+
+                <span class="service-arrow">↗</span>
+              </article>
+
+              <article class="service-row reveal">
+                <div class="service-number">02</div>
+
+                <div class="service-main">
+                  <h3>Web Design & Development</h3>
+                  <p>
+                    High-performance digital experiences built around clarity,
+                    usability, and conversion.
+                  </p>
+                </div>
+
+                <span class="service-arrow">↗</span>
+              </article>
+
+              <article class="service-row reveal">
+                <div class="service-number">03</div>
+
+                <div class="service-main">
+                  <h3>Digital Growth</h3>
+                  <p>
+                    SEO, analytics, optimization, and growth systems designed
+                    to turn attention into measurable results.
+                  </p>
+                </div>
+
+                <span class="service-arrow">↗</span>
+              </article>
+
+              <article class="service-row reveal">
+                <div class="service-number">04</div>
+
+                <div class="service-main">
+                  <h3>Ongoing Partnership</h3>
+                  <p>
+                    Continuous improvement, experimentation, and support as
+                    your business evolves.
+                  </p>
+                </div>
+
+                <span class="service-arrow">↗</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PROCESS ==================== -->
+      <section class="section process-section">
+        <div class="container">
+          <div class="section-heading centered reveal">
+            <div>
+              <span class="section-number">03</span>
+              <span class="section-label">Our process</span>
+            </div>
+
+            <h2>
+              Simple process.
+              <span>Serious outcomes.</span>
+            </h2>
           </div>
 
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="input-group">
-              <label for="name">Full Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" />
+          <div class="process-grid">
+            <article class="process-card reveal">
+              <span>01</span>
+              <h3>Discover</h3>
+              <p>
+                We understand your business, audience, goals, and opportunities.
+              </p>
+            </article>
+
+            <article class="process-card reveal reveal-delay">
+              <span>02</span>
+              <h3>Strategize</h3>
+              <p>
+                We create a focused direction that connects creativity with business goals.
+              </p>
+            </article>
+
+            <article class="process-card reveal">
+              <span>03</span>
+              <h3>Design</h3>
+              <p>
+                We turn strategy into a distinctive and intuitive digital experience.
+              </p>
+            </article>
+
+            <article class="process-card reveal reveal-delay">
+              <span>04</span>
+              <h3>Launch</h3>
+              <p>
+                We build, test, launch, measure, and continuously improve the experience.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== ABOUT ==================== -->
+      <section class="section about-section" id="about">
+        <div class="container about-layout">
+          <div class="about-statement reveal">
+            <span class="section-number">04</span>
+            <span class="section-label">About Nova</span>
+
+            <h2>
+              We believe great digital work should
+              <span>feel as good as it performs.</span>
+            </h2>
+          </div>
+
+          <div class="about-content reveal reveal-delay">
+            <p class="about-large">
+              Nova Studio is an independent digital studio helping ambitious
+              businesses build brands and experiences that matter.
+            </p>
+
+            <p>
+              We combine thoughtful strategy, strong visual systems, and
+              technology to create work that is not only beautiful, but useful.
+            </p>
+
+            <p>
+              No unnecessary complexity. No design for design's sake. Just
+              focused digital work built around real business outcomes.
+            </p>
+
+            <a href="#contact" class="text-link">
+              Let's build something meaningful
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== CONTACT ==================== -->
+      <section class="contact-section" id="contact">
+        <div class="container">
+          <div class="contact-box reveal">
+            <div class="contact-intro">
+              <span class="section-number">05</span>
+              <span class="section-label">Start a project</span>
+
+              <h2>
+                Have an idea?
+                <span>Let's make it real.</span>
+              </h2>
+
+              <p>
+                Tell us what you're building, where you're going, and what
+                you're trying to achieve.
+              </p>
+
+              <div class="contact-details">
+                <a href="mailto:hello@novastudio.com">
+                  hello@novastudio.com
+                </a>
+
+                <span>Bangalore, India</span>
+              </div>
             </div>
 
-            <div class="input-group">
-              <label for="email">Email Address</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" />
-            </div>
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="name">Name</label>
 
-            <div class="input-group">
-              <label for="message">Project Details</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell us a little about your project"></textarea>
-            </div>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Your name"
+                    autocomplete="name"
+                  />
+                </div>
 
-            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-            <p class="form-message" id="formMessage" aria-live="polite"></p>
-          </form>
+                <div class="input-group">
+                  <label for="email">Email</label>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                  />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="message">Tell us about your project</label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="What are you building?"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="button button-primary submit-button">
+                Send inquiry
+                <span>↗</span>
+              </button>
+
+              <p
+                class="form-message"
+                id="formMessage"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- ==================== FOOTER ==================== -->
     <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>© <span id="year"></span> Nova Studio. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#about">About</a>
+      <div class="container footer-top">
+        <a href="#home" class="brand footer-brand">
+          <span class="brand-mark">
+            <span>N</span>
+          </span>
+
+          <span class="brand-name">Nova<span>Studio</span></span>
+        </a>
+
+        <p>
+          Digital experiences for ambitious brands.
+        </p>
+
+        <a href="#home" class="back-top" aria-label="Back to top">
+          ↑
+        </a>
+      </div>
+
+      <div class="container footer-bottom">
+        <span>
+          © <span id="year"></span> Nova Studio. All rights reserved.
+        </span>
+
+        <div>
+          <a href="#work">Work</a>
           <a href="#services">Services</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
