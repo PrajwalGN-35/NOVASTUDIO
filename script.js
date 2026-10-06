@@ -82,7 +82,7 @@ if (contactForm) {
     if (!name || !email || !message) {
 
       showFormMessage(
-        "Please complete all fields before sending.",
+        "Please complete all fields before submitting.",
         "error"
       );
 
@@ -97,7 +97,7 @@ if (contactForm) {
     if (!emailPattern.test(email)) {
 
       showFormMessage(
-        "Please enter a valid email address.",
+        "Please enter a valid corporate email address.",
         "error"
       );
 
@@ -106,7 +106,7 @@ if (contactForm) {
 
 
     showFormMessage(
-      "Thanks! Your inquiry has been received.",
+      "Thank you. Your strategy session request has been received.",
       "success"
     );
 
@@ -181,10 +181,10 @@ if (heroVisual && window.innerWidth > 720) {
   window.addEventListener("mousemove", (event) => {
 
     const x =
-      (event.clientX / window.innerWidth - 0.5) * 10;
+      (event.clientX / window.innerWidth - 0.5) * 8;
 
     const y =
-      (event.clientY / window.innerHeight - 0.5) * 10;
+      (event.clientY / window.innerHeight - 0.5) * 8;
 
     heroVisual.style.transform =
       `translate(${x}px, ${y}px)`;
