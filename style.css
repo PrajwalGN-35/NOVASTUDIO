@@ -34,7 +34,7 @@ body {
   overflow-x: hidden;
 }
 
-body::selection {
+::selection {
   background: var(--accent);
   color: var(--black);
 }

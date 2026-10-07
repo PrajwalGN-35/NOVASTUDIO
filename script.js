@@ -1,256 +1,123 @@
-const navToggle = document.querySelector(".nav-toggle");
-const mainNav = document.querySelector(".main-nav");
-const contactForm = document.getElementById("contactForm");
-const formMessage = document.getElementById("formMessage");
-const yearElement = document.getElementById("year");
+﻿document.addEventListener("DOMContentLoaded", () => {
 
+    const year = document.getElementById("year");
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
 
-// =========================
-// CURRENT YEAR
-// =========================
+    const menuToggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("main-nav");
 
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
+    if (menuToggle && nav) {
+        menuToggle.addEventListener("click", () => {
+            const isOpen = nav.classList.toggle("active");
 
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
+        });
 
-// =========================
-// MOBILE NAVIGATION
-// =========================
+        nav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation");
+            });
+        });
+    }
 
-if (navToggle && mainNav) {
+    const contactForm = document.getElementById("contact-form");
+    const formMessage = document.getElementById("form-message");
 
-  navToggle.addEventListener("click", () => {
+    if (contactForm && formMessage) {
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault();
 
-    const isOpen = mainNav.classList.toggle("open");
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
 
-    navToggle.setAttribute(
-      "aria-expanded",
-      String(isOpen)
-    );
+            if (!name || !email || !message) {
+                formMessage.textContent = "Please complete all fields.";
+                formMessage.className = "form-message error";
+                return;
+            }
 
-    navToggle.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation" : "Open navigation"
-    );
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  });
+            if (!emailPattern.test(email)) {
+                formMessage.textContent = "Please enter a valid email address.";
+                formMessage.className = "form-message error";
+                return;
+            }
 
+            formMessage.textContent =
+                "Thanks. Nova is currently being built. The conversation interface will be available soon.";
 
-  mainNav.querySelectorAll("a").forEach((link) => {
+            formMessage.className = "form-message success";
 
-    link.addEventListener("click", () => {
+            contactForm.reset();
+        });
+    }
 
-      mainNav.classList.remove("open");
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", event => {
+            const targetId = anchor.getAttribute("href");
 
-      navToggle.setAttribute(
-        "aria-expanded",
-        "false"
-      );
+            if (!targetId || targetId === "#") return;
 
-      navToggle.setAttribute(
-        "aria-label",
-        "Open navigation"
-      );
+            const target = document.querySelector(targetId);
 
+            if (target) {
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
     });
 
-  });
+    const heroVisual = document.querySelector(".hero-visual");
 
-}
+    if (heroVisual) {
+        heroVisual.addEventListener("mousemove", event => {
+            const rect = heroVisual.getBoundingClientRect();
 
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
 
-// =========================
-// CONTACT FORM
-// =========================
+            heroVisual.style.transform =
+                `perspective(1000px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg)`;
+        });
 
-if (contactForm) {
-
-  contactForm.addEventListener("submit", (event) => {
-
-    event.preventDefault();
-
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const messageInput = document.getElementById("message");
-
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
-
-
-    if (!name || !email || !message) {
-
-      showFormMessage(
-        "Please complete all fields before submitting.",
-        "error"
-      );
-
-      return;
+        heroVisual.addEventListener("mouseleave", () => {
+            heroVisual.style.transform =
+                "perspective(1000px) rotateY(0deg) rotateX(0deg)";
+        });
     }
 
-
-    const emailPattern =
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-    if (!emailPattern.test(email)) {
-
-      showFormMessage(
-        "Please enter a valid corporate email address.",
-        "error"
-      );
-
-      return;
-    }
-
-
-    showFormMessage(
-      "Thank you. Your strategy session request has been received.",
-      "success"
+    const revealElements = document.querySelectorAll(
+        ".service-item, .process-card, .about-main-card, .about-stat"
     );
 
-    contactForm.reset();
-
-  });
-
-}
-
-
-function showFormMessage(message, type) {
-
-  if (!formMessage) {
-    return;
-  }
-
-  formMessage.textContent = message;
-
-  formMessage.classList.remove(
-    "success",
-    "error"
-  );
-
-  formMessage.classList.add(type);
-
-}
-
-
-// =========================
-// SMOOTH NAVIGATION
-// =========================
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-
-  link.addEventListener("click", (event) => {
-
-    const targetId =
-      link.getAttribute("href");
-
-    if (!targetId || targetId === "#") {
-      return;
-    }
-
-    const target =
-      document.querySelector(targetId);
-
-    if (!target) {
-      return;
-    }
-
-    event.preventDefault();
-
-    target.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-
-  });
-
-});
-
-
-// =========================
-// SUBTLE PARALLAX EFFECT
-// =========================
-
-const heroVisual =
-  document.querySelector(".hero-visual");
-
-if (heroVisual && window.innerWidth > 720) {
-
-  window.addEventListener("mousemove", (event) => {
-
-    const x =
-      (event.clientX / window.innerWidth - 0.5) * 8;
-
-    const y =
-      (event.clientY / window.innerHeight - 0.5) * 8;
-
-    heroVisual.style.transform =
-      `translate(${x}px, ${y}px)`;
-
-  });
-
-}
-
-
-// =========================
-// REVEAL ON SCROLL
-// =========================
-
-const revealElements =
-  document.querySelectorAll(
-    ".service-item, .process-card, .about-main-card, .about-stat"
-  );
-
-const revealObserver =
-  new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("visible");
-
-          revealObserver.unobserve(
-            entry.target
-          );
-
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12
         }
+    );
 
-      });
-
-    },
-    {
-      threshold: 0.12
-    }
-  );
-
-
-revealElements.forEach((element) => {
-
-  element.style.opacity = "0";
-  element.style.transform = "translateY(25px)";
-  element.style.transition =
-    "opacity 0.7s ease, transform 0.7s ease";
-
-  revealObserver.observe(element);
+    revealElements.forEach(element => observer.observe(element));
 
 });
-
-
-// Add visible state through JS
-const revealStyle = document.createElement("style");
-
-revealStyle.textContent = `
-  .service-item.visible,
-  .process-card.visible,
-  .about-main-card.visible,
-  .about-stat.visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-`;
-
-document.head.appendChild(revealStyle);
