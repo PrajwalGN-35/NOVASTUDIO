@@ -1,117 +1,211 @@
-# Nova Studio
+# Nova
 
-> A premium digital studio website built to help businesses grow through strategy, design, and digital experiences that feel premium and perform beautifully.
+Nova is an AI thinking and strategy advisor built to help people think more clearly, challenge assumptions, compare options, and move forward with better decisions.
 
-## Overview
+This repository currently contains the public landing experience and the first functional application boundary for Phase 2. It is intentionally not a production AI product yet.
 
-Nova Studio is a modern, responsive digital agency website designed with a strong focus on visual quality, user experience, and performance.
+## Current Phase
 
-The website presents Nova Studio's services, working process, brand positioning, and contact experience through a clean, premium interface.
+Phase 2: Application Architecture
 
-## ✨ Features
+The current focus is to establish:
 
-* Premium dark-themed responsive design
-* Modern agency-style landing page
-* Responsive navigation with mobile menu
-* Animated hero section and visual elements
-* Services showcase
-* Company process / workflow section
-* Contact inquiry form with client-side validation
-* Smooth scrolling navigation
-* Scroll-based reveal animations
-* Subtle desktop hero parallax effect
-* Fully responsive across desktop, tablet, and mobile
-* Clean semantic HTML structure
-* Lightweight vanilla JavaScript implementation
+- a clean separation between landing experience and application experience
+- a frontend application shell for future conversations and advisor workflows
+- a backend API boundary contract for future intelligence
+- clear architectural boundaries for reasoning, context, memory, research, and tools
 
-## 🛠️ Tech Stack
+This phase does not implement:
 
-* **HTML5** — Page structure and semantic markup
-* **CSS3** — Responsive design, animations, layouts, and visual styling
-* **JavaScript** — Interactions, navigation, form validation, animations, and UI behavior
-* **Google Fonts** — DM Sans & Space Grotesk
-* **Git & GitHub** — Version control
-* **Vercel** — Deployment
+- real AI reasoning
+- authentication
+- persistent memory
+- web research
+- database storage
+- model integrations
+- production agent execution
 
-## 📁 Project Structure
+## Product Positioning
+
+Nova is positioned as:
+
+- AI Thinking and Strategy Advisor
+- designed to challenge assumptions and evaluate alternatives
+- built to help users reason clearly before making decisions
+
+The product principle remains:
+
+Think clearly.
+Decide better.
+Move forward.
+
+## Architecture
+
+The project now follows a lightweight architecture that preserves the static landing site while creating a clear application boundary.
+
+```text
+Nova
+├── Public Landing Experience
+│   └── index.html + style.css + script.js
+│
+├── Nova Application
+│   ├── app/index.html
+│   ├── app/app.css
+│   ├── app/app.js
+│   └── frontend state + UI shell
+│
+├── Backend / API Boundary
+│   └── api/nova.js
+│
+├── Contracts / Types
+│   └── types/nova.ts
+│
+├── Environment Example
+│   └── .env.example
+│
+└── Tooling
+    ├── package.json
+    └── tests/api.test.js
+```
+
+## Application Boundary
+
+The development API endpoint is intentionally a stub layer. It validates requests and returns a predictable response contract, while clearly signaling that the intelligence system is not connected yet.
+
+Request shape:
+
+```json
+{
+  "message": "I need help evaluating a product idea.",
+  "conversationId": "conversation-123",
+  "context": {
+    "goal": "clarify next steps",
+    "phase": "Phase 2"
+  }
+}
+```
+
+Response shape:
+
+```json
+{
+  "success": true,
+  "response": "Nova has received the request ...",
+  "conversationId": "conversation-123",
+  "metadata": {
+    "status": "stub",
+    "backendConnected": false,
+    "requestReceivedAt": "2026-10-07T00:00:00.000Z"
+  }
+}
+```
+
+This contract is designed to support future reasoning, confidence scoring, assumptions, risks, recommendations, sources, and memory references without breaking the UI.
+
+## Project Structure
 
 ```text
 NOVASTUDIO/
-│
+├── api/
+│   └── nova.js
+├── app/
+│   ├── app.css
+│   ├── app.js
+│   └── index.html
+├── tests/
+│   └── api.test.js
+├── types/
+│   └── nova.ts
+├── .env.example
+├── .gitignore
 ├── index.html
-├── style.css
+├── package.json
+├── README.md
 ├── script.js
-└── README.md
+├── style.css
+└── .git
 ```
 
-## 🎨 Design Direction
-
-Nova Studio uses a premium digital-agency aesthetic built around:
-
-* Dark visual foundation
-* Lime accent color
-* Glassmorphism-inspired UI elements
-* Strong typography
-* Minimal layouts
-* Micro-interactions
-* Smooth animations
-* Clear call-to-action sections
-
-The design aims to communicate **premium quality, creativity, and digital performance** without unnecessary visual clutter.
-
-## 🚀 Getting Started
+## Getting Started
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/PrajwalGN-35/NOVASTUDIO.git
-```
-
-Navigate into the project:
-
-```bash
 cd NOVASTUDIO
 ```
 
-Then open `index.html` in a browser.
+Install dependencies:
 
-No framework, package manager, or build process is required.
+```bash
+npm install
+```
 
-## 🌐 Deployment
+Run the local Vercel-style development flow:
 
-The project is configured for deployment through Vercel.
+```bash
+npm run dev
+```
 
-The `main` branch is used as the production branch, allowing updates pushed to GitHub to trigger a new deployment when the repository is connected to Vercel.
+Open the landing page at:
 
-## 📱 Responsive Design
+```text
+http://localhost:3000/
+```
 
-The website is designed to adapt across:
+Open the application shell at:
 
-* Desktop
-* Laptop
-* Tablet
-* Mobile devices
+```text
+http://localhost:3000/app/
+```
 
-Responsive layouts, navigation behavior, typography, spacing, and interactive elements are handled through CSS and JavaScript.
+## Available Commands
 
-## 🔮 Future Improvements
+```bash
+npm run dev
+npm test
+npm run typecheck
+npm run build
+```
 
-* Connect the contact form to a real email service or backend
-* Add CMS-based content management
-* Add case studies and project pages
-* Add analytics
-* Improve accessibility and SEO metadata
-* Add additional interactive transitions
-* Introduce a backend for inquiry management
+## Current API Boundary
 
-## 👨‍💻 Author
+The current stub endpoint is available at:
 
-**Prajwal G N**
+```text
+POST /api/nova
+```
+
+Behavior:
+
+- validates request shape
+- rejects empty or malformed input
+- preserves a clean response contract
+- clearly marks the backend as unavailable
+- never calls a real AI model
+- never exposes API keys
+
+## Design and UX Notes
+
+The original premium dark landing experience is preserved. It remains visually polished and continues to work independently. The new app shell sits beside it as a future application surface without disrupting the public site experience.
+
+## What Is Intentionally Not Included
+
+- AI model integration
+- authentication
+- database persistence
+- memory layer
+- web research layer
+- tool execution
+- production persona or fake conversation simulation
+- backend business logic beyond the request contract
+
+## Recommended Next Phase
+
+The next step should be introducing a real application backend behind the same contract, followed by content-aware context handling, a reasoning service boundary, and an operational model configuration layer.
+
+## Author
+
+Prajwal G N
 
 B.Tech — Artificial Intelligence & Data Science
-
-GitHub: `PrajwalGN-35`
-
-## 📄 License
-
-This project is intended as a portfolio and demonstration project.
